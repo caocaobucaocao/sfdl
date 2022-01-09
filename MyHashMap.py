@@ -12,8 +12,8 @@ class MyHashMap:
         self.load_factor = int(self.size / self.bucket)
         self.data = numpy.ones((self.bucket, int(self.load_factor)), numpy.uint8, ) * -1
 
-    def __hash__(self):
-        pass
+    def __hash__(self, key):
+        return key % self.bucket
 
     def find_bucket(self):
         for x in range(self.size, 3, -1):
