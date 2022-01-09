@@ -1,5 +1,6 @@
-from random import randint, seed
+from random import randint, seed, random
 from time import time
+from math import sqrt, ceil
 
 
 def is_sorted(nums):
@@ -47,3 +48,25 @@ def list_remove_duplicate(data):
         else:
             pass
     return res
+
+
+def is_primer(num):
+    if num == 0 or num == 1:
+        return False
+    elif num == 2 or num == 3:
+        return True
+    elif num % 6 != 1 and num % 6 != 5:
+        return False
+    else:
+        stop = ceil(sqrt(num))
+        for x in range(5, stop, 6):
+            if num % x == 0 or num % (x + 2) == 0:
+                return False
+            else:
+                pass
+        return True
+
+
+a = int(random() * 100)
+print(a)
+print(is_primer(a))
