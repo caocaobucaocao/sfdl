@@ -28,7 +28,7 @@ class MyHashMap:
                 return y
 
     def __str__(self):
-        return "{},{},{}".format(self.size, self.bucket, self.load_factor)
+        return "{},{},{},{}".format(self.size, self.bucket, self.load_factor, self.data)
 
 
 test = MyHashMap(random.randint(10, 2047))
